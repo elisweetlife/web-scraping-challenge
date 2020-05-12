@@ -15,8 +15,7 @@
 
         <div class="jumbotron text-center">
             <h1>Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role
-            ="button"Scrape New Data</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
 
         <!-- Mars News -->
@@ -85,7 +84,7 @@
                 <!-- If images is fals none nonexist then defaulf message -->
                 <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
                 <div class="caption">
-                    <h3>{hemisphere.title}</h3>
+                    <h3>{{hemisphere.title}}</h3>
                 </div>
                 </div>
             </div>

@@ -144,17 +144,17 @@ def scrape_hemisphere(html_text):
     # Try to get href and text except if error.
     try:
         title_elem = hemi_soup.find("h2", class_="title").get_text()
-        # sample_elem = hemi_soup.find("a", text="Sample").get() #May be an issue
+        sample_elem = hemi_soup.find("a", text="Sample").get("href") #May be an issue
 
     except AttributeError:
 
         # Image error returns none for  better front-end handling
         title_elem = None
-        #sample_elem = None
+        sample_elem = None
 
     hemisphere = {
-        "title": title_elem
-        #"img_url": sample_elem
+        "title": title_elem,
+        "img_url": sample_elem
     }
 
     return hemisphere
@@ -170,7 +170,7 @@ def mars_facts():
     df.set_index("description", inplace=True)
 
     # Add some bootstrap action to the table
-    return df.to_html(classes="table table-striped")
+    return "Scraping Success - kind of"
 
 if __name__ == "__main__":
 
